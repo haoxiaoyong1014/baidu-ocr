@@ -16,7 +16,6 @@ public class JsonBody implements Serializable{
 
     private String words;
 
-    /*private List<String>location;*/
 
     public String getKey() {
         return key;
@@ -34,11 +33,11 @@ public class JsonBody implements Serializable{
         this.words = words;
     }
 
-   /* public List<String> getLocation() {
-        return location;
+    @Override
+    public String toString() {
+        return "JsonBody{" +
+                "key='" + key + '\'' +
+                ", words='" + words + '\'' +
+                '}';
     }
-
-    public void setLocation(List<String> location) {
-        this.location = location;
-    }*/
 }

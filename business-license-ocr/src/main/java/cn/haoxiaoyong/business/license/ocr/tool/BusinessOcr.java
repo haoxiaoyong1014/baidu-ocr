@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSON;
 import com.baidu.aip.ocr.AipOcr;
 import cn.haoxiaoyong.business.license.ocr.bean.JsonBody;
 import cn.haoxiaoyong.business.license.ocr.bean.OCRApi;
-import cn.haoxiaoyong.business.license.ocr.bean.RespInfo;
 import cn.haoxiaoyong.business.license.ocr.utils.Constant;
 import cn.haoxiaoyong.business.license.ocr.utils.ResUtils;
 import org.json.JSONObject;
@@ -29,15 +28,13 @@ public class BusinessOcr implements Constant {
     private OCRApi OCRApi;
 
     public String sampleBusiness(String imgPath) {
-        RespInfo respInfo = new RespInfo();
         AipOcr client = getAipOcr();
         JSONObject res = client.businessLicense(imgPath, new HashMap<String, String>());
         Map<String, Object> jsonMap = (Map<String, Object>) JSON.parse(res.toString(2));
         String error_code = (String) jsonMap.get(OCR_ERROR_CODE);
         if (error_code != null) {
             String strBody = ResUtils.callBack(error_code);
-            respInfo.setContent(strBody);
-            return JSON.toJSONString(respInfo);
+            return strBody;
         }
         Map<String, String> valueMap = (Map<String, String>) jsonMap.get(OCR_WORDS_RESULT);
         List<JsonBody> list = new ArrayList<JsonBody>(valueMap.keySet().size());
@@ -46,8 +43,7 @@ public class BusinessOcr implements Constant {
             jsonBody.setKey(key);
             list.add(jsonBody);
         }
-        respInfo.setContent(list);
-        return JSON.toJSONString(respInfo);
+        return JSON.toJSONString(list);
     }
 
     /**
