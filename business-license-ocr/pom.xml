@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>baidu-ocr</artifactId>
+        <groupId>cn.haoxiaoyong.ocr</groupId>
+        <version>v1.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>business-license-ocr</artifactId>
+    <developers>
+        <developer>
+            <id>haoxy</id>
+            <name>haoxy</name>
+            <email>hxyHelloWorld@163.com</email>
+            <url>http://www.haoxiaoyong.cn</url>
+        </developer>
+    </developers>
+    <dependencies>
+        <dependency>
+            <groupId>com.baidu.aip</groupId>
+            <artifactId>java-sdk</artifactId>
+            <version>4.8.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.31</version>
+        </dependency>
+    </dependencies>
+</project>
