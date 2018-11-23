@@ -68,9 +68,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
                 <version>1.6</version>
-                <!--<configuration>
-                    <skip>true</skip>
-                </configuration>-->
                 <executions>
                     <execution>
                         <id>sign-artifacts</id>
@@ -127,7 +124,7 @@
     </scm>
     <distributionManagement>
         <snapshotRepository>
-            <id>ossrh</id>
+            <id>release</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
         <repository>
