@@ -124,7 +124,7 @@
     </scm>
     <distributionManagement>
         <snapshotRepository>
-            <id>release</id>
+            <id>ossrh</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
         <repository>
