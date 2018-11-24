@@ -16,6 +16,13 @@
 
 * 引入 maven 依赖
 
+```
+  <groupId>cn.haoxiaoyong.ocr</groupId>
+    <artifactId>business-license-ocr</artifactId>
+        <version>v1.1.0</version>
+```
+  
+
 * 在SpringBoot启动类上通过注解引入Main Class
   
           @Import({
